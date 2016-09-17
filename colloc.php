@@ -140,8 +140,6 @@ if (count($localizationFileLines) > 0)
                     $languageIndex++;
                 }
 
-                $iOSFiles[ "header" ][] = "#define $key NSLocalizedString(@\"$key\", nil)";
-
             }
             else
             {
@@ -336,11 +334,6 @@ function writeIOSFiles($files, $destPath)
         }
 
         $filename = $iOSPath . "/" . $directory . "/Localizable.strings";
-
-        if ($languageName == "header")
-        {
-            $filename = $iOSPath . "/" . "Localization.h";
-        }
 
         echo("iOS  - Trying to Write:\n" . $filename . "\n");
         createPathIfDoesntExists($filename);
